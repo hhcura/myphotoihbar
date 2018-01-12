@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { GirisPage } from '../giris/giris';
+import { Sifremiunuttum2Page } from '../sifremiunuttum2/sifremiunuttum2';
 
 /**
  * Generated class for the SifremiunuttumPage page.
@@ -25,7 +26,11 @@ export class SifremiunuttumPage {
   }
 
   ionViewDidLeave() {
-this.navCtrl.popToRoot();
+   // this.navCtrl.popToRoot();
+  }
+
+  open(){
+    this.navCtrl.push(Sifremiunuttum2Page);
   }
 
 }

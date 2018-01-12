@@ -22,4 +22,8 @@ export class SifredegistirPage {
     console.log('ionViewDidLoad SifredegistirPage');
   }
 
+  dogru(){
+    
+  }
+
 }

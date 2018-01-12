@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { SifredegistirPage } from '../sifredegistir/sifredegistir';
 
 /**
  * Generated class for the Sifremiunuttum2Page page.
@@ -20,6 +21,10 @@ export class Sifremiunuttum2Page {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Sifremiunuttum2Page');
+  }
+
+  openn(){
+    this.navCtrl.push(SifredegistirPage);
   }
 
 }
