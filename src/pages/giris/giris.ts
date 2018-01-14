@@ -32,12 +32,12 @@ export class GirisPage {
 
   kayit()
   {
-   this.navCtrl.push(KayitPage);
+   this.navCtrl.push("KayitPage");
   }
 
   sifremiunuttum()
   {
-   this.navCtrl.push(SifremiunuttumPage);
+   this.navCtrl.push("SifremiunuttumPage");
   }
 
 

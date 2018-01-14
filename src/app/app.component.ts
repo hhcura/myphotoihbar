@@ -10,7 +10,7 @@ import { GirisPage } from '../pages/giris/giris';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = GirisPage;
+  rootPage:any = "GirisPage";
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

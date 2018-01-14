@@ -30,7 +30,7 @@ export class SifremiunuttumPage {
   }
 
   open(){
-    this.navCtrl.push(Sifremiunuttum2Page);
+    this.navCtrl.push("Sifremiunuttum2Page");
   }
 
 }

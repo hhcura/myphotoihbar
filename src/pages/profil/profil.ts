@@ -24,7 +24,7 @@ export class ProfilPage {
 
   sifremidegistir()
   {
-    this.navCtrl.push(SifredegistirPage);
+    this.navCtrl.push("SifredegistirPage");
 
   }
 

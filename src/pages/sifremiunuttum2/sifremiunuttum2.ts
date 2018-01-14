@@ -24,7 +24,7 @@ export class Sifremiunuttum2Page {
   }
 
   openn(){
-    this.navCtrl.push(SifredegistirPage);
+    this.navCtrl.push("SifredegistirPage");
   }
 
 }
