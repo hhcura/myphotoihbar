@@ -14,5 +14,53 @@
 
 
 <ion-content padding>
+    <ion-item>   
+    <p>{{imageURI}}</p>
+    <div class="center">
+    <button ion-button color="special" (crylick)="getImage()">
+      <div>
+        <ion-icon name="camera"></ion-icon>
+    </div>
+    </button>
+    <button ion-button color="special" (click)="getImage()">
+      <div>
+        <ion-icon name="camera"></ion-icon>
+    </div>
+    </button>
+    <button ion-button color="special" (crylick)="getImage()">
+      <div>
+        <ion-icon name="camera"></ion-icon>
+    </div>
+    </button>
+    <button ion-button color="special" (crylick)="getImage()">
+      <div>
+        <ion-icon name="camera"></ion-icon>
+    </div>
+    </button>
+    <button ion-button color="special" (crylick)="getImage()" >
+      <div>
+        <ion-icon name="camera"></ion-icon>
+    </div>
+    </button>
+  </div>
+  </ion-item>
+  <ion-item>
+    <h4>Image Preview</h4>
+    <img src="{{imageFileName}}" *ngIf="imageFileName" alt="Ionic File" width="300" />
+  </ion-item>
+  
+  <ion-item>
+      <button ion-button block light color="special" (click)="doRadio()">İhbar Başlığı:</button>
+</ion-item>
+<ion-item>
+    <ion-label color="special" stacked>Açıklama:</ion-label>
+<ion-textarea></ion-textarea>
+</ion-item>
+<ion-item>
+    <ion-label>Konum</ion-label>
+    <ion-toggle enabled checked="false"></ion-toggle>
+  </ion-item>
 
+<button style="margin-top: 15px;height: 35px;font-size: 14px;background: #10ABF4;" ion-button  block  (click)="kayit2()">Gönder</button>
+  
 </ion-content>
