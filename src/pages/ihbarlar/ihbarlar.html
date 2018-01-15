@@ -14,10 +14,41 @@
 
 
 <ion-content padding>
-    <ion-list no-lines>
-        <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
-          {{ item }}
-        </button> 
+    <ion-list> 
+        <ion-item-sliding *ngFor="let item of items"> </ion-item-sliding> 
+        <ion-item>
+           <ion-card> 
+             <ion-card-header>
+               <!--** {{ item.header }}**-->
+               Header
+            </ion-card-header>
+            <ion-card-content>
+               <!--** {{ item.header }}**-->
+               Content
+            </ion-card-content>
+      
+              <ion-row>
+                  <ion-col>
+                    <button ion-button icon-left clear small (click)="show()">
+                      <ion-icon name="more"></ion-icon>
+                      <div>Göster</div>
+                    </button>
+                  </ion-col>
+                  <ion-col>
+                      <button ion-button icon-left clear small (click)="del()">
+                        <ion-icon name="trash"></ion-icon>
+                        <div>Sil</div>
+                      </button>
+                    </ion-col>
+                  <ion-col center text-center>
+                    <ion-note>
+               <!--** {{ item.header }}**-->
+                      Date
+                    </ion-note>
+                  </ion-col>
+                </ion-row> 
+             </ion-card>
+          </ion-item>
       </ion-list>
 
 </ion-content>
