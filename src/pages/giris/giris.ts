@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { SifremiunuttumPage } from '../sifremiunuttum/sifremiunuttum';
-import { KayitPage } from '../kayit/kayit';
 import { TabsPage } from '../tabs/tabs';
 import { AnasayfaPage } from '../anasayfa/anasayfa';
 /**

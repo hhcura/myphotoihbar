@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { SifredegistirPage } from '../sifredegistir/sifredegistir';
+
 
 /**
  * Generated class for the Sifremiunuttum2Page page.
