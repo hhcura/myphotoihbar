@@ -18,10 +18,20 @@
         <ion-item-sliding *ngFor="let item of items"> </ion-item-sliding> 
         <ion-item>
            <ion-card> 
+              <ion-row>
+                  <ion-col>
              <ion-card-header>
                <!--** {{ item.header }}**-->
                Header
             </ion-card-header>
+                   </ion-col>
+            <ion-col center text-center>
+              <ion-note>
+         <!--** {{ item.header }}**-->
+                Date
+              </ion-note>
+            </ion-col>
+          </ion-row> 
             <ion-card-content>
                <!--** {{ item.header }}**-->
                Content
@@ -40,12 +50,7 @@
                         <div>Sil</div>
                       </button>
                     </ion-col>
-                  <ion-col center text-center>
-                    <ion-note>
-               <!--** {{ item.header }}**-->
-                      Date
-                    </ion-note>
-                  </ion-col>
+                  
                 </ion-row> 
              </ion-card>
           </ion-item>

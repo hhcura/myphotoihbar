@@ -6,6 +6,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ServiceProvider } from '../providers/service/service';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+  //  ServiceProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

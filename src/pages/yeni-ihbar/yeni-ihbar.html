@@ -49,10 +49,19 @@
     <img src="{{imageFileName}}" *ngIf="imageFileName" alt="Ionic File" width="300" />
   </ion-item>
   
+  <ion-list>
+    <ion-item>
+      <ion-label color="dark">İhbar Başlığı</ion-label>
+      <ion-select [(ngModel)]="toppings" multiple="false" cancelText="İptal" okText="Tamam">
+        <ion-option value="1">Kazı Çalışması</ion-option>
+        <ion-option value="2">Araba Kazası</ion-option>
+        <ion-option value="3">Hatalı Park</ion-option>
+        <ion-option value="4">Tabela</ion-option>
+        <ion-option value="5">Diğer</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
   <ion-item>
-      <button ion-button block light color="special" (click)="doRadio()">İhbar Başlığı:</button>
-</ion-item>
-<ion-item>
     <ion-label color="special" stacked>Açıklama:</ion-label>
 <ion-textarea></ion-textarea>
 </ion-item>
