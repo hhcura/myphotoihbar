@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
-
+import { Camera, CameraOptions } from "@ionic-native/camera";
 /**
  * Generated class for the YeniIhbarPage page.
  *
@@ -15,8 +15,15 @@ import { AlertController } from 'ionic-angular';
   templateUrl: 'yeni-ihbar.html',
 })
 export class YeniIhbarPage {
-
-  constructor(public alerCtrl: AlertController) {
+  public photos: any;
+  public base64Image: string;
+  public fileImage: string;
+  public responseData: any;
+  constructor(public alerCtrl: AlertController,
+    public navCtrl: NavController,
+    private camera: Camera,
+    private alertCtrl: AlertController,
+  ) {
   }
 //public alerCtrl: AlertController
 //public navCtrl: NavController, public navParams: NavParams 
@@ -25,60 +32,32 @@ export class YeniIhbarPage {
   }
   testRadioOpen: boolean;
   testRadioResult;
+  getImage() {
+    console.log("coming here");
 
+    const options: CameraOptions = {
+      quality: 50,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE,
+      targetWidth: 450,
+      targetHeight: 450,
+      saveToPhotoAlbum: false
+    };
 
-  doRadio() {
-    let alert = this.alerCtrl.create();
-    alert.setTitle('İhbar Türü');
-
-    alert.addInput({
-      type: 'radio',
-      label: 'Yanlış Park',
-      value: 'yanlıspark',
-      checked: true
-    });
-
-    alert.addInput({
-      type: 'radio',
-      label: 'Kazı Çalışması',
-      value: 'kazıcalısması'
-    });
-
-    alert.addInput({
-      type: 'radio',
-      label: 'Hatalı Tabela',
-      value: 'hatalıtabela'
-    });
-
-    alert.addInput({
-      type: 'radio',
-      label: 'Işık İhlali',
-      value: 'isikihlali'
-    });
-
-    alert.addInput({
-      type: 'radio',
-      label: 'Orman Yangını',
-      value: 'ormanyangını'
-    });
-
-    alert.addInput({
-      type: 'radio',
-      label: 'Diğer',
-      value: 'diger'
-    });
-    alert.addButton('İptal');
-    alert.addButton({
-      text: 'Tamam',
-      handler: data => {
-        console.log('Radio data:', data);
-        this.testRadioOpen = false;
-        this.testRadioResult = data;
+    this.camera.getPicture(options).then(
+      imageData => {
+        this.base64Image = "data:image/jpeg;base64," + imageData;
+        this.photos.push(this.base64Image);
+        this.photos.reverse();
+       // this.sendData(imageData);
+      },
+      err => {
+        console.log(err);
       }
-    });
+    );
+  }
 
-    alert.present().then(() => {
-      this.testRadioOpen = true;
-    });
-}
+
+
 }

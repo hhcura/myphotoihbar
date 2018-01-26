@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavParams } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
 import { AnasayfaPage } from '../anasayfa/anasayfa';
+import { NavController, LoadingController, ToastController } from 'ionic-angular';
+import { RemoteServiceProvider } from '../../providers/remote-service/remote-service';
+//NavController,
 /**
  * Generated class for the GirisPage page.
  *
@@ -15,8 +18,45 @@ import { AnasayfaPage } from '../anasayfa/anasayfa';
   templateUrl: 'giris.html',
 })
 export class GirisPage {
+  loading: any;
+  loginData = { username:'', password:'' };
+  data: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public authService: RemoteServiceProvider, public loadingCtrl: LoadingController, private toastCtrl: ToastController) {
+  }
+  doLogin() {
+    this.showLoader();
+    this.authService.login(this.loginData).then((result) => {
+      this.loading.dismiss();
+      this.data = result;
+      localStorage.setItem('token', this.data.access_token);
+      this.navCtrl.setRoot(TabsPage);
+    }, (err) => {
+      this.loading.dismiss();
+      this.presentToast(err);
+    });
+  }
+  showLoader(){
+    this.loading = this.loadingCtrl.create({
+        content: 'Authenticating...'
+    });
+
+    this.loading.present();
+  }
+
+  presentToast(msg) {
+    let toast = this.toastCtrl.create({
+      message: msg,
+      duration: 3000,
+      position: 'bottom',
+      dismissOnPageChange: true
+    });
+
+    toast.onDidDismiss(() => {
+      console.log('Dismissed toast');
+    });
+
+    toast.present();
   }
 
   ionViewDidLoad() {
