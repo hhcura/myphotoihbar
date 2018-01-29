@@ -36,6 +36,9 @@ export class GirisPage {
       this.presentToast(err);
     });
   }
+  register() {
+    this.navCtrl.push("KayitPage" );
+  }
   showLoader(){
     this.loading = this.loadingCtrl.create({
         content: 'Authenticating...'
@@ -57,7 +60,7 @@ export class GirisPage {
     });
 
     toast.present();
-  }
+  } 
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad GirisPage');

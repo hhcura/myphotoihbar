@@ -1,8 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/catch';
 /*
   Generated class for the ServiceProvider provider.
 
@@ -13,9 +11,7 @@ import 'rxjs/add/operator/catch';
 export class ServiceProvider {
 
   constructor(public http: HttpClient) {
-    console.log('Hello RestProvider Provider');
+    console.log('Hello ServiceProvider Provider');
   }
-
-  private apiUrl = 'https://restcountries.eu/rest/v2/all';
 
 }

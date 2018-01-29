@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
-import { Camera, CameraOptions } from "@ionic-native/camera";
+//import { Camera, CameraOptions } from "@ionic-native/camera";
 /**
  * Generated class for the YeniIhbarPage page.
  *
@@ -21,7 +21,7 @@ export class YeniIhbarPage {
   public responseData: any;
   constructor(public alerCtrl: AlertController,
     public navCtrl: NavController,
-    private camera: Camera,
+   // private camera: Camera,
     private alertCtrl: AlertController,
   ) {
   }
@@ -35,7 +35,7 @@ export class YeniIhbarPage {
   getImage() {
     console.log("coming here");
 
-    const options: CameraOptions = {
+  /*  const options: CameraOptions = {
       quality: 50,
       destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
@@ -55,7 +55,7 @@ export class YeniIhbarPage {
       err => {
         console.log(err);
       }
-    );
+    );*/
   }
 
 
